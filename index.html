@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Polityka Prywatności — HabiCash</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f4f7f5;
+    --surface: #ffffff;
+    --ink: #16241f;
+    --ink-soft: #3f5850;
+    --muted: #6b8079;
+    --line: #d8e2dd;
+    --accent: #1e6f5c;
+    --accent-soft: #e4f0ec;
+    --gold: #a9772f;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1713;
+      --surface: #16211c;
+      --ink: #e7efea;
+      --ink-soft: #b9ccc4;
+      --muted: #7f9a91;
+      --line: #2a3a33;
+      --accent: #6fc7ad;
+      --accent-soft: #1c2e28;
+      --gold: #d9b25d;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    line-height: 1.6;
+    padding-inline: 20px;
+    padding-block: 48px;
+  }
+  .page { max-width: 700px; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .eyebrow .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    max-width: 60ch;
+    margin: 0 0 36px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 44px;
+  }
+  .meta-item { font-size: 0.86rem; }
+  .meta-item span {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+
+  section { margin-bottom: 40px; }
+  section:last-of-type { margin-bottom: 0; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.32rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  section p, section li {
+    max-width: 66ch;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  section p { margin: 0 0 12px; }
+  section ul { margin: 0 0 12px; padding-left: 1.3em; }
+  section li { margin-bottom: 8px; }
+  section li:last-child { margin-bottom: 0; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .card .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .card p { font-size: 0.88rem; margin: 0; color: var(--ink-soft); }
+
+  .contact-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-box p { margin: 0; color: var(--ink); font-size: 0.95rem; }
+  .contact-box .addr {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.92rem;
+    color: var(--accent);
+    user-select: all;
+  }
+  .copy-btn {
+    font: inherit;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--surface);
+    background: var(--accent);
+    border: none;
+    border-radius: 7px;
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+  .copy-btn:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="eyebrow"><span class="dot"></span>HabiCash — dokument prawny</div>
+  <h1>Polityka Prywatności</h1>
+  <p class="subtitle">Ta polityka opisuje, jakie dane przetwarza aplikacja mobilna „HabiCash” i na jakich zasadach.</p>
+
+  <div class="meta-row">
+    <div class="meta-item"><span>Obowiązuje od</span>30 września 2026</div>
+    <div class="meta-item"><span>Aplikacja</span>HabiCash</div>
+    <div class="meta-item"><span>Deweloper</span>Kacper Święcicki</div>
+    <div class="meta-item"><span>Zasięg</span>Android · Google Play</div>
+  </div>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Zasada nadrzędna: Twoje dane zostają na Twoim urządzeniu</h2></div>
+    <p>HabiCash to aplikacja działająca w pełni offline. Nie posiada własnego serwera ani bazy danych w chmurze. Wszystkie informacje, które wprowadzasz — nazwy profili, nawyki, transakcje, budżety, cele oszczędnościowe i notatki — są zapisywane wyłącznie w lokalnej bazie danych na Twoim telefonie. Nie mamy do nich dostępu, nie widzimy ich i nie możemy ich odzyskać, jeśli je usuniesz.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Jakie dane przetwarza aplikacja</h2></div>
+    <p>Poniższe kategorie danych istnieją wyłącznie lokalnie, na Twoim urządzeniu:</p>
+    <div class="card-grid">
+      <div class="card"><div class="label">Profile</div><p>Nazwy i kolory profili tworzonych w aplikacji.</p></div>
+      <div class="card"><div class="label">Nawyki</div><p>Nazwy, harmonogramy, notatki i historia ukończeń.</p></div>
+      <div class="card"><div class="label">Finanse</div><p>Transakcje, kategorie, budżety, płatności cykliczne, cele oszczędnościowe.</p></div>
+      <div class="card"><div class="label">Blokada PIN</div><p>Jeśli włączysz blokadę, zapisywany jest wyłącznie skrót (hash SHA-256) PIN-u — nigdy sam PIN.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Uprawnienia systemowe</h2></div>
+    <ul>
+      <li><strong>Powiadomienia</strong> — używane wyłącznie do lokalnych przypomnień o zbliżających się lub zaległych płatnościach cyklicznych. Powiadomienia generuje samo urządzenie; nie korzystamy z żadnej zewnętrznej usługi push.</li>
+      <li><strong>Biometria (odcisk palca)</strong> — opcjonalna metoda odblokowania aplikacji, obsługiwana w całości przez system Android (BiometricPrompt). Aplikacja nigdy nie ma dostępu do Twoich danych biometrycznych — jedynie otrzymuje informację „potwierdzono” lub „odrzucono”.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Płatności i subskrypcja Premium</h2></div>
+    <p>Zakup HabiCash Premium jest obsługiwany wyłącznie przez Google Play Billing. Nie przetwarzamy, nie przechowujemy i nie widzimy danych Twojej karty płatniczej ani szczegółów transakcji — te informacje trafiają bezpośrednio do Google i podlegają <a href="https://policies.google.com/privacy" style="color:var(--accent)">polityce prywatności Google</a>. Aplikacja otrzymuje jedynie potwierdzenie, że zakup został dokonany, aby odblokować funkcje Premium.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Czego nie robimy</h2></div>
+    <ul>
+      <li>Nie wyświetlamy reklam.</li>
+      <li>Nie korzystamy z narzędzi analitycznych ani śledzących.</li>
+      <li>Nie przesyłamy żadnych danych na zewnętrzne serwery.</li>
+      <li>Nie sprzedajemy ani nie udostępniamy danych osobom trzecim — bo ich po prostu nie posiadamy.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Kopia zapasowa i usuwanie danych</h2></div>
+    <p>Aplikacja pozwala wyeksportować dane do pliku JSON zapisywanego lokalnie w miejscu wybranym przez Ciebie (np. w pamięci telefonu) — pełna kontrola nad tym plikiem pozostaje po Twojej stronie. Możesz trwale usunąć swoje dane w dowolnym momencie, usuwając profil w aplikacji lub odinstalowując aplikację — co usuwa lokalną bazę danych bez możliwości odzyskania.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Dzieci</h2></div>
+    <p>Aplikacja nie jest kierowana do dzieci poniżej 13 roku życia i świadomie nie zbiera od nich żadnych danych — co jest tym łatwiejsze do zapewnienia, że nie zbieramy żadnych danych od nikogo.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>Zmiany w polityce</h2></div>
+    <p>Jeśli ta polityka ulegnie zmianie, zaktualizowana wersja zostanie opublikowana pod tym samym adresem wraz z nową datą obowiązywania widoczną powyżej.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">09</span><h2>Kontakt</h2></div>
+    <p>Pytania dotyczące prywatności możesz kierować bezpośrednio do dewelopera aplikacji:</p>
+    <div class="contact-box">
+      <p>Napisz e-mail: <span class="addr" id="email-addr">kswiecicki1410@gmail.com</span></p>
+      <button class="copy-btn" onclick="copyEmail()">Kopiuj adres</button>
+    </div>
+  </section>
+
+  <footer>
+    HabiCash — aplikacja lokalna, offline-first. Ten dokument jest hostowany jako publiczna strona referencyjna dla zgłoszenia w Google Play Console.
+  </footer>
+</div>
+
+<script>
+  function copyEmail() {
+    const text = document.getElementById('email-addr').textContent;
+    const btn = event.target;
+    const original = btn.textContent;
+    function done(ok) {
+      btn.textContent = ok ? 'Skopiowano' : 'Zaznacz i skopiuj';
+      setTimeout(() => { btn.textContent = original; }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => done(true)).catch(() => done(false));
+    } else {
+      done(false);
+    }
+  }
+</script>
+
+</body>
+</html>
